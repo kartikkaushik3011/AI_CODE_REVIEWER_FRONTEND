@@ -29,6 +29,7 @@ main .right {
 main .left {
   background-color: #000000;
   position: relative;
+  overflow: auto
 }
 
 .left .code,
