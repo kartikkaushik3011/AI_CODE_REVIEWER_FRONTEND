@@ -11,7 +11,6 @@ import './App.css'
 function App() {
   
   const api_url =  import.meta.env.VITE_BACKEND_URL
-  console.log(api_url)
   const [ code, setCode ] = useState(` function sum() {
   return 1 + 1
 }`)
