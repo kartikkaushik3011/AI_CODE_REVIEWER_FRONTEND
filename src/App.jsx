@@ -49,9 +49,10 @@ function App() {
               }}
             />
           </div>
-          <div
+          <button
+            disabled={loading}
             onClick={reviewCode}
-            className="review">{loading?"Loading...":"Review"}</div>
+            className="review">{loading?"Loading..":"Review"}</button>
         </div>
         <div className="right">
           <Markdown
