@@ -16,14 +16,17 @@ function App() {
 }`)
 
   const [ review, setReview ] = useState(``)
+  const [loading, setLoading]=useState(false)
 
   useEffect(() => {
     prism.highlightAll()
   }, [])
 
   async function reviewCode() {
+    setLoading(true)
     const response = await axios.post(`${api_url}ai/get-review`, { code })
     setReview(response.data)
+    setLoading(false)
   }
 
   return (
@@ -48,7 +51,7 @@ function App() {
           </div>
           <div
             onClick={reviewCode}
-            className="review">Review</div>
+            className="review">{loading?"Loading...":"Review"}</div>
         </div>
         <div className="right">
           <Markdown
